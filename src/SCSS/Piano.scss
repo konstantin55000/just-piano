@@ -1,4 +1,5 @@
 /* Declare vars */
+$mainContainerWidth: 620px;
 $padWidth: 935px;
 $padHeight: 272px;
 $controlsScreenWidth: 100px;
@@ -18,7 +19,7 @@ $backgroundColor: gray;
 
 .inner-container {
   
-  width: 720px;
+  width: $mainContainerWidth;
   text-align: center;
   .keys { 
     margin: 20px 15px;
