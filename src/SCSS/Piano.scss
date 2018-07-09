@@ -1,0 +1,260 @@
+/* Declare vars */
+$padWidth: 935px;
+$padHeight: 272px;
+$controlsScreenWidth: 100px;
+$controlsWidth: 180px;
+$boardHeight: 312px;
+$forefontColor: silver;
+$backgroundColor: gray;
+
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  user-select: none;
+}
+
+.inner-container {
+  
+  width: 720px;
+  text-align: center;
+  .keys { 
+    margin: 20px 15px;
+   
+  }
+  .controls-container {
+    position: absolute;
+    top: 20px; right: 40px;
+    width: $controlsWidth;
+    height: $padHeight;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+    .control {
+      color: $forefontColor;
+      width: 100px;
+      margin: auto;
+      p {
+        margin-bottom: 0;
+      }
+      .select {
+      @extend .outer-select;
+        .inner {
+          @extend .inner-select;
+        }
+      }
+    }
+    .screen {
+      width:  $controlsScreenWidth;
+      height: 15px;
+      background-color: $backgroundColor;
+      color: $forefontColor;
+      margin: 15px auto;
+      padding: 15px; 
+    }
+  }
+}
+
+.outer-select {
+  margin: auto;
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+  padding: 1px;
+  background-color: black;
+}
+
+.inner-select {
+  width: 23px;
+  height: 19px;
+  background: silver;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+
+
+/**
+ Credits for Css Keyboard: 
+ * Pure CSS3 Piano by Taufik Nurrohman 
+ * with my changes.
+ */
+
+* {
+  margin:0px;
+  padding:0px;
+  list-style:none;
+}
+
+:focus {
+  outline:none !important;
+}
+
+body {
+  background:#666;
+  background:-webkit-radial-gradient(bottom left,cover,#999,#666);
+  background:-moz-radial-gradient(bottom left,cover,#999,#666);
+  background:-ms-radial-gradient(bottom left,cover,#999,#666);
+  background:-o-radial-gradient(bottom left,cover,#999,#666);
+  background:radial-gradient(bottom left,cover,#999,#666);
+  height:500px;
+}
+
+ 
+/* Piano Wrapper */
+#p-wrapper {
+    background: #000;
+    background: -webkit-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
+    background: -moz-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
+    background: -ms-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
+    background: -o-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
+    background: linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
+    height: $padHeight;
+    padding-left: 10px;
+    position: relative;
+    margin: auto;
+    -webkit-box-shadow: 0 2px 0px #666, 0 3px 0px #555, 0 4px 0px #444, 0 6px 6px #000, inset 0 -1px 1px rgba(255,255,255,0.5), inset 0 -4px 5px #000;
+    -moz-box-shadow: 0 2px 0px #666,0 3px 0px #555,0 4px 0px #444,0 6px 6px #000,inset 0 -1px 1px rgba(255,255,255,0.5),inset 0 -4px 5px #000;
+    box-shadow: 0 2px 0px #666, 0 3px 0px #555, 0 4px 0px #444, 0 6px 6px #000, inset 0 -1px 1px rgba(255,255,255,0.5), inset 0 -4px 5px #000;
+    border: 2px solid #333;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -webkit-animation: taufik 2s;
+    -moz-animation: taufik 2s;
+    animation: taufik 2s;
+}
+
+/* Keyboard */
+ #piano {
+  display:block;
+  width:100%;
+  height: $boardHeight;
+  border-top:2px solid #222;
+}
+
+ #piano li {
+  list-style:none;
+  float:left;
+  display:inline;
+  background:#aaa;
+  width:40px;
+  position:relative;
+}
+
+#piano li:last-child {
+    width: 38px;
+}
+
+#piano li:last-child > div { 
+    width: 92%;
+}
+
+.piano-key {
+  display:block;
+  height:210px;
+  padding-top: 10px;
+  background:$forefontColor;
+  background:-webkit-linear-gradient(-30deg,#f5f5f5,$forefontColor);
+  background:-moz-linear-gradient(-30deg,#f5f5f5,$forefontColor);
+  background:-ms-linear-gradient(-30deg,#f5f5f5,$forefontColor);
+  background:-o-linear-gradient(-30deg,#f5f5f5,$forefontColor);
+  background:linear-gradient(-30deg,#f5f5f5,$forefontColor);
+  border:1px solid #ccc;
+  -webkit-box-shadow:inset 0 1px 0px $forefontColor,inset 0 -1px 0px $forefontColor,inset 1px 0px 0px $forefontColor,inset -1px 0px 0px $forefontColor,0 4px 3px rgba(0,0,0,0.7);
+  -moz-box-shadow:inset 0 1px 0px $forefontColor,inset 0 -1px 0px $forefontColor,inset 1px 0px 0px $forefontColor,inset -1px 0px 0px $forefontColor,0 4px 3px rgba(0,0,0,0.7);
+  box-shadow:inset 0 1px 0px $forefontColor,inset 0 -1px 0px $forefontColor,inset 1px 0px 0px $forefontColor,inset -1px 0px 0px $forefontColor,0 4px 3px rgba(0,0,0,0.7);
+  -webkit-border-radius:0 0 3px 3px;
+  -moz-border-radius:0 0 3px 3px;
+  border-radius:0 0 3px 3px;
+}
+
+.piano-key:active, .piano-key.active {
+  -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 2px 2px rgba(0,0,0,0.4);
+  box-shadow:0 2px 2px rgba(0,0,0,0.4);
+  position:relative;
+  top:2px;
+  height:216px;
+}
+
+.piano-key:active:before, .piano-key.active:before {
+  content:"";
+  width:0px;
+  height:0px;
+  border-width:216px 5px 0px;
+  border-style:solid;
+  border-color:transparent transparent transparent rgba(0,0,0,0.1);
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+.piano-key:active:after {
+  content:"";
+  width:0px;
+  height:0px;
+  border-width:216px 5px 0px;
+  border-style:solid;
+  border-color:transparent rgba(0,0,0,0.1) transparent transparent;
+  position:absolute;
+  right:0px;
+  top:0px;
+}
+
+/* Black Keys */
+ .black {
+  padding-top: 10px;
+  position:absolute;
+  top:0px;
+  left:-12px;
+  width:20px;
+  height:110px;
+  color: $forefontColor;
+  background:#333;
+  background:-webkit-linear-gradient(-20deg,#333,#000,#333);
+  background:-moz-linear-gradient(-20deg,#333,#000,#333);
+  background:-ms-linear-gradient(-20deg,#333,#000,#333);
+  background:-o-linear-gradient(-20deg,#333,#000,#333);
+  background:linear-gradient(-20deg,#333,#000,#333);
+  z-index:10;
+  border-width:1px 2px 7px;
+  border-style:solid;
+  border-color:#666 #222 #111 #555;
+  -webkit-box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);
+  -moz-box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);
+  box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);
+  -webkit-border-radius:0 0 2px 2px;
+  -moz-border-radius:0 0 2px 2px;
+  border-radius:0 0 2px 2px;
+}
+
+.black:active,  .black.active {
+  border-bottom-width:2px;
+  height:123px;
+  -webkit-box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
+  -moz-box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
+  box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
+}
+   
+
+.clear {
+  clear:both;
+}
+
+
+/* Animation */
+@-webkit-keyframes taufik {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@-moz-keyframes taufik {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@keyframes taufik {
+  from {opacity:0;}
+  to {opacity:1;}
+}
