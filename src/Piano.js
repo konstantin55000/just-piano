@@ -15,11 +15,10 @@ const soundPreset2Name = 'Samples';
 let soundPreset2 = [];
 
 
-class Piano extends React.Component {
+class Piano extends React.PureComponent {
 	constructor(props) {
 		super(props);
-		this.state = {
-			power: true,
+		this.state = { 
 			display: soundPreset1Name,
 			currentSoundPreset: soundPreset1,
 			currentSoundPresetId: soundPreset1Id,
@@ -47,28 +46,27 @@ class Piano extends React.Component {
 
 	}
 	displayNoteName(name) {
-		if (this.state.power) {
+		 
 			this.setState({
 				display: name
 			});
-		}
+		 
 	}
 	adjustVolume(e) {
-		if (this.state.power) {
+		 
 			this.setState({
 				sliderVal: e.target.value,
 				display: "Volume: " + Math.round(e.target.value * 100)
 			});
 			setTimeout( () => this.clearDisplay(), 1000);
-		}
+		 
 	}
 	clearDisplay() {
 		this.setState({
 			display: String.fromCharCode(160)
 		});
 	}
-	render() {
-		const powerSlider = this.state.power ? { float: 'right' } : { float: 'left' };
+	render() { 
 	    const presetSlider = this.state.currentSoundPresetId === soundPreset1Id ? { float: 'left' } : { float: 'right' };
 		{
 			document.querySelectorAll('.note').forEach(sound => {
@@ -79,8 +77,7 @@ class Piano extends React.Component {
 			<div className="inner-container">
                 <div id="p-wrapper">
                     <ul id="piano">
-                        <Keyboard
-                            power={this.state.power}
+                        <Keyboard 
                             updateDisplay={this.displayNoteName}
                             noteVolume={this.state.sliderVal}
                             currentSoundPreset={this.state.currentSoundPreset} />

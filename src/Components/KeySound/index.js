@@ -4,7 +4,7 @@ class KeySound extends React.Component {
 		super(props);
 		this.playSound = this.playSound.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
- this.toggleActive = this.toggleActive.bind(this);
+        this.toggleActive = this.toggleActive.bind(this);
 	}
 	componentDidMount() {
 		document.addEventListener('keydown', this.handleKeyPress);
