@@ -4,7 +4,7 @@ class KeySound extends React.Component {
 		super(props);
 		this.playSound = this.playSound.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
-
+ this.toggleActive = this.toggleActive.bind(this);
 	}
 	componentDidMount() {
 		document.addEventListener('keydown', this.handleKeyPress);
@@ -15,6 +15,7 @@ class KeySound extends React.Component {
 	handleKeyPress(e) {
 		if (e.keyCode === this.props.keyCode) {
 			this.playSound();
+            this.toggleActive();
 		}
 	}
 	playSound(e) {
@@ -22,15 +23,16 @@ class KeySound extends React.Component {
 		sound.currentTime = 0;
 		sound.play();
 		this.props.updateDisplay(this.props.noteId.replace('-', ' '));
-
 	}
-	setClassActive(e) {
-			//@todo: this.props.noteId set active
+	toggleActive(e) {
+		const currNote = document.getElementById(this.props.noteId);
+        currNote.classList.add("active");
+        setTimeout(() =>   currNote.classList.remove("active"), 160);
 	}
 	render() {
 
         let classNames = "piano-key";
-        console.log('sharpness', this.props.sharp);
+         
         if (this.props.sharp) { classNames = ' black'};
 
 		return (
