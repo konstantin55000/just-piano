@@ -1,8 +1,8 @@
 /* Declare vars */
 $mainContainerWidth: 620px;
-$padWidth: 935px;
+$padWidth: 915px;
 $padHeight: 272px;
-$controlsScreenWidth: 100px;
+$controlsScreenWidth: 140px;
 $controlsWidth: 180px;
 $boardHeight: 312px;
 $forefontColor: silver;
@@ -27,7 +27,7 @@ $backgroundColor: gray;
   }
   .controls-container {
     position: absolute;
-    top: 20px; right: 40px;
+    top: 20px; right: 20px;
     width: $controlsWidth;
     height: $padHeight;
     display: inline-block;
@@ -35,10 +35,11 @@ $backgroundColor: gray;
     vertical-align: top;
     .control {
       color: $forefontColor;
-      width: 100px;
+      width: 140px;
       margin: auto;
       p {
-        margin-bottom: 0;
+        margin-bottom: 0; 
+        margin-top: 15px;
       }
       .select {
       @extend .outer-select;
@@ -80,7 +81,7 @@ $backgroundColor: gray;
 /**
  Credits for Css Keyboard: 
  * Pure CSS3 Piano by Taufik Nurrohman 
- * with my changes.
+ * with improvments K.P.
  */
 
 * {

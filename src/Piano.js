@@ -3,16 +3,15 @@ import Keyboard from './Components/Keyboard';
 import './SCSS/Piano.scss';
 import './SCSS/CustomSlider.scss';
 import soundPreset1 from './soundData/soundList.js'
-//
+import soundPreset2 from './soundData/percussionList.js'
 
 
 //Declare consts
 const soundPreset1Id = 'classic';
 const soundPreset2Id = 'samples';
 const soundPreset1Name = 'Piano';
-const soundPreset2Name = 'Samples';
+const soundPreset2Name = 'Drums';
 
-let soundPreset2 = [];
 
 
 class Piano extends React.PureComponent {
