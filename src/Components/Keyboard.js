@@ -4,7 +4,7 @@ import KeySound from './KeySound'
 function  Keyboard   (props) {
 			const keyboard =  props.currentSoundPreset.map( (obj, i, soundProps) => {
 				return (
-					<KeySound
+					<KeySound key={soundProps[i].id}
 						noteId={soundProps[i].id}
 						note={soundProps[i].url}
 						keyTrigger={soundProps[i].keyTrigger}

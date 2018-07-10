@@ -31,8 +31,7 @@ class KeySound extends React.Component {
 	}
 	render() {
 
-        let classNames = "piano-key";
-         
+        let classNames = "piano-key"; 
         if (this.props.sharp) { classNames = ' black'};
 
 		return (
