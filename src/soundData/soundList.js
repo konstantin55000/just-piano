@@ -3,7 +3,7 @@ export default [
     {keyCode: 65, keyTrigger: 'A', id: 'C', url: 'http://pochaevsky2.96.lt/medias/261-C.mp3'},
 	{keyCode: 87, keyTrigger: 'W', id: 'C#', sharp: true, url: 'http://pochaevsky2.96.lt/medias/277-C-sharp.mp3'},
 	{keyCode: 83, keyTrigger: 'S', id: 'D', url: 'http://pochaevsky2.96.lt/medias/293-D.mp3'},
-	{keyCode: 69, keyTrigger: 'E', id: 'D #', sharp: true, url: 'http://pochaevsky2.96.lt/medias/311-D-sharp.mp3'},
+	{keyCode: 69, keyTrigger: 'E ', id: 'D #', sharp: true, url: 'http://pochaevsky2.96.lt/medias/311-D-sharp.mp3'},
     //D keytriger 68
     {keyCode: 68, keyTrigger: 'D ', id: 'E', url: 'http://pochaevsky2.96.lt/medias/329-E.mp3 '},
 	{keyCode: 70, keyTrigger: 'F ', id: 'F', url: 'http://pochaevsky2.96.lt/medias/349-F.mp3'},
